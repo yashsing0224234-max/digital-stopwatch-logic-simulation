@@ -1,0 +1,72 @@
+class Stopwatch {
+    
+    private long startTime;
+    private long elapsedTime;
+    private boolean isRunning;
+
+    public Stopwatch() {
+        this.startTime = 0;
+        this.elapsedTime = 0;
+        this.isRunning = false;
+    }
+
+    public void start() {
+        if (!isRunning) {
+            startTime = System.currentTimeMillis();
+            isRunning = true;
+            System.out.println("Stopwatch Started...");
+        }
+    }
+
+    public void stop() {
+        if (isRunning) {
+            long currentTime = System.currentTimeMillis();
+            elapsedTime += (currentTime - startTime);
+            isRunning = false;
+            System.out.println("Stopwatch Stopped...");
+        }
+    }
+
+    public void reset() {
+        startTime = 0;
+        elapsedTime = 0;
+        isRunning = false;
+        System.out.println("Stopwatch Reset.");
+    }
+
+    public long getElapsedTime() {
+        if (isRunning) {
+            long currentTime = System.currentTimeMillis();
+            return (currentTime - startTime) + elapsedTime;
+        } else {
+            return elapsedTime;
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Stopwatch myStopwatch = new Stopwatch();
+
+        try {
+            myStopwatch.start();
+            Thread.sleep(2500); 
+            
+            myStopwatch.stop();
+            System.out.println("Elapsed Time: " + myStopwatch.getElapsedTime() + " ms\n");
+            
+            System.out.println("Resuming Stopwatch...");
+            myStopwatch.start();
+            Thread.sleep(1500);
+            
+            myStopwatch.stop();
+            System.out.println("Elapsed Time: " + myStopwatch.getElapsedTime() + " ms\n");
+            
+            myStopwatch.reset();
+            System.out.println("Elapsed Time: " + myStopwatch.getElapsedTime() + " ms");
+
+        } catch (InterruptedException e) {
+            System.out.println("Thread was interrupted.");
+        }
+    }
+}
