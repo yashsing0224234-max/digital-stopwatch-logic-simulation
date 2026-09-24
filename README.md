@@ -1,69 +1,31 @@
 # Digital Stopwatch Logic Simulation (Core Java & OOP)
 
-A console-based **Digital Stopwatch Logic Simulation** built using **Core Java** and **Object-Oriented Programming (OOP)** concepts.  
-This project demonstrates clean OOP design, encapsulation, and accurate stopwatch timing using internal state management.
+A console-based digital stopwatch simulation built with **Core Java** and **Object-Oriented Programming**.
 
----
+The project focuses on clean state management and stopwatch behavior such as start, pause, resume, reset, and elapsed-time tracking.
 
-## Author
-**Yash Kumar Singh**  
-ERP: **RU 25 11630**
+## features
 
----
+- start stopwatch
+- pause / stop while preserving elapsed time
+- resume from the previous elapsed time
+- reset elapsed time to zero
+- display elapsed time in milliseconds
 
-## Features
-- ✅ Start Stopwatch
-- ✅ Stop / Pause Stopwatch (elapsed time is preserved)
-- ✅ Resume Stopwatch (continue timing)
-- ✅ Reset Stopwatch (elapsed time becomes 0)
-- ✅ Display elapsed time in **milliseconds**
+## concepts used
 
----
+- classes and objects
+- encapsulation
+- method-based state transitions
+- internal state management
+- `System.currentTimeMillis()`
 
-## Technologies Used
-- **Java (Core Java)**
-- **OOP Concepts**
-  - Encapsulation
-  - Class design
-  - Method-based state transitions
+## how to run
 
----
+1. clone the repository
+2. open it in IntelliJ IDEA, Eclipse, or VS Code
+3. run the Java class containing the `main` method
 
-## Project Logic
-The stopwatch functionality is implemented using a `Stopwatch` class that encapsulates:
-- `startTime`
-- `elapsedTime`
-- `isRunning`
+## author
 
-It uses `System.currentTimeMillis()` to calculate elapsed time correctly during multiple start/stop cycles.
-
----
-
-## How to Run
-1. Clone the repository
-2. Open the project in any Java IDE (Eclipse / IntelliJ / VS Code)
-3. Run the `main` method in the demo class (e.g., `StopwatchDemo` / `Main`)
-
----
-
-## Project Structure (Typical)
-- `Stopwatch` class
-  - `start()`
-  - `stop()`
-  - `reset()`
-  - `getElapsedTime()`
-- `StopwatchDemo` / `Main` class
-  - console interaction (optional menu)
-
----
-
-## Sample Output
-```text  
-Stopwatch Started...  
-Elapsed Time: 2500 ms  
-
-Stopwatch Paused...  
-Elapsed Time: 2500 ms  
-
-Stopwatch Reset...  
-Elapsed Time: 0 ms  
+**Yash Kumar Singh**
